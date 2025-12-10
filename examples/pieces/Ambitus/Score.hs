@@ -1,5 +1,5 @@
 
-{-# LANGUAGE FlexibleContexts, ScopedTypeVariables, TypeApplications, FlexibleInstances, DeriveFunctor, DeriveFoldable, TypeFamilies #-}
+{-# LANGUAGE FlexibleContexts, ScopedTypeVariables, TypeApplications, FlexibleInstances, DeriveFunctor, DeriveFoldable, TypeFamilies, TypeOperators #-}
 
 module Main where
 

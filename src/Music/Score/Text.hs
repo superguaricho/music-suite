@@ -99,9 +99,9 @@ deriving instance Enum a => Enum (TextT a)
 
 deriving instance Bounded a => Bounded (TextT a)
 
-deriving instance (Num a, Ord a, Real a) => Real (TextT a)
+deriving instance (Real a) => Real (TextT a)
 
-deriving instance (Real a, Enum a, Integral a) => Integral (TextT a)
+deriving instance (Integral a) => Integral (TextT a)
 
 -- |
 -- Attach the given text to the first note.

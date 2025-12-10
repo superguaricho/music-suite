@@ -62,18 +62,14 @@ trackEv :: Iso (Placed a) (Placed b) (TrackEv a) (TrackEv b)
 trackEv = id
 
 instance Applicative Track where
-  pure = return
-
+  pure = view _Unwrapped . return . return
   (<*>) = ap
 
 instance Alternative Track where
   (<|>) = (<>)
-
   empty = mempty
 
 instance Monad Track where
-  return = view _Unwrapped . return . return
-
   xs >>= f = view _Unwrapped $ (view _Wrapped . f) `mbind` view _Wrapped xs
     where
       mbind = (concat .) . fmap . (fmap join .) . Data.Traversable.traverse

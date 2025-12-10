@@ -93,9 +93,9 @@ deriving instance Enum a => Enum (HarmonicT a)
 
 deriving instance Bounded a => Bounded (HarmonicT a)
 
-deriving instance (Num a, Ord a, Real a) => Real (HarmonicT a)
+deriving instance (Real a) => Real (HarmonicT a)
 
-deriving instance (Real a, Enum a, Integral a) => Integral (HarmonicT a)
+deriving instance (Integral a) => Integral (HarmonicT a)
 
 -- |
 -- Make all notes natural harmonics on the given overtone (1 for octave, 2 for fifth etc).

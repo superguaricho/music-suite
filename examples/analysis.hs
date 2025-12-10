@@ -1,5 +1,6 @@
 
 {-# LANGUAGE TypeFamilies #-}
+{-# LANGUAGE TypeOperators #-}
 
 import Music.Prelude
 import Control.Lens (_1, over)

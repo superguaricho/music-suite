@@ -1,5 +1,5 @@
 
-{-# LANGUAGE GADTs, OverloadedLists #-}
+{-# LANGUAGE GADTs, OverloadedLists, TypeOperators #-}
 
 import Music.Prelude
 import Control.Lens (set)

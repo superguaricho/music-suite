@@ -84,9 +84,9 @@ deriving instance Enum a => Enum (StaffNumberT a)
 
 deriving instance Bounded a => Bounded (StaffNumberT a)
 
-deriving instance (Num a, Ord a, Real a) => Real (StaffNumberT a)
+deriving instance (Real a) => Real (StaffNumberT a)
 
-deriving instance (Real a, Enum a, Integral a) => Integral (StaffNumberT a)
+deriving instance (Integral a) => Integral (StaffNumberT a)
 
 deriving instance IsPitch a => IsPitch (StaffNumberT a)
 

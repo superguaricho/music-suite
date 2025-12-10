@@ -110,7 +110,7 @@ instance Eq a => Eq (Twain b a) where
 instance Ord a => Ord (Twain b a) where
   Twain (_b, a) <= Twain (_b', a') = a < a'
 
-instance (Monoid b, Real a, Enum a, Integral a) => Integral (Twain b a) where
+instance (Monoid b, Integral a) => Integral (Twain b a) where
   quot = liftA2 quot
 
   rem = liftA2 rem
@@ -200,7 +200,7 @@ instance (Eq b, Eq a) => Eq (Couple b a) where
 instance (Ord b, Ord a) => Ord (Couple b a) where
   Couple (b, a) <= Couple (b', a') = (b, a) < (b', a')
 
-instance (Monoid b, Ord b, Real a, Enum a, Integral a) => Integral (Couple b a) where
+instance (Monoid b, Ord b, Integral a) => Integral (Couple b a) where
   quot = liftA2 quot
 
   rem = liftA2 rem

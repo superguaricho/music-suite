@@ -27,7 +27,8 @@ source-repository head
 library
     build-depends:
                         base,
-                        aeson >= 1.5 && < 2,
+                        -- aeson >= 1.5 && < 2,
+                        aeson >= 1.5,
                         aeson-pretty,
                         average,
                         base-orphans,
@@ -249,15 +250,15 @@ library
                         TypeOperators,
                         TypeSynonymInstances,
                         ViewPatterns
-  ghc-options:
-    -Wall
-    -Wcompat
-    -Wincomplete-record-updates
-    -Wincomplete-uni-patterns
-    -Wredundant-constraints
-    -Wno-unused-top-binds
-    -Wno-name-shadowing
-    -Werror
+    ghc-options:
+        -Wall
+        -Wcompat
+        -Wincomplete-record-updates
+        -Wincomplete-uni-patterns
+        -Wredundant-constraints
+        -Wno-unused-top-binds
+        -Wno-name-shadowing
+        -Werror
 
 test-suite "music-suite-test-umts"
     build-depends:      base,

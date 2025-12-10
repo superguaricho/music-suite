@@ -135,7 +135,7 @@ instance Show a => Show (Voice a) where
 -- intermediate structure.
 
 instance Applicative Voice where
-  pure = return
+  pure = Voice . return . return
 
   (<*>) = ap
 
@@ -147,8 +147,6 @@ instance Alternative Voice where
 -- Note: We could also iso-derive this via (WriterT Duration [])
 -- as in Music.Time.Score
 instance Monad Voice where
-  return = Voice . return . return
-
   (>>=) :: forall a b. Voice a -> (a -> Voice b) -> Voice b
   Voice xs >>= f = Voice $ (getVoice . f) `mbind` xs
     where

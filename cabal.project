@@ -1,15 +1,16 @@
 
-reject-unconstrained-dependencies: all
-index-state: 2021-12-24T16:25:00Z
+-- reject-unconstrained-dependencies: all
+-- index-state: 2021-12-24T16:25:00Z
 
 
 -- No repos listed, so hackage.haskell.org with the default root keys are used.
 --
 -- See https://github.com/haskell/cabal/blob/a07ef25229217a289433087c241d89e1c08e65e0/cabal-install/Distribution/Client/Config.hs#L654
 
-packages: ./music-suite.cabal
+packages: ./music-suite.cabal 
+          ./*/*.cabal
 
-with-compiler: ghc-8.10.7
+-- with-compiler: ghc-8.10.7
 
 package music-suite
   optimization: False

@@ -107,9 +107,9 @@ deriving instance Enum a => Enum (SlideT a)
 
 deriving instance Bounded a => Bounded (SlideT a)
 
-deriving instance (Num a, Ord a, Real a) => Real (SlideT a)
+deriving instance (Real a) => Real (SlideT a)
 
-deriving instance (Real a, Enum a, Integral a) => Integral (SlideT a)
+deriving instance (Integral a) => Integral (SlideT a)
 
 -- |
 -- Add a slide between the first and the last note.

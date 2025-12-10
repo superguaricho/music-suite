@@ -1,7 +1,7 @@
 {-# OPTIONS_GHC -Werror #-}
 {-# LANGUAGE TypeFamilies, ScopedTypeVariables, ConstraintKinds, FlexibleContexts, FlexibleInstances, TypeFamilies, DeriveFunctor,
   GeneralizedNewtypeDeriving, ViewPatterns, MultiParamTypeClasses, RankNTypes, ConstraintKinds, StandaloneDeriving,
-  DeriveTraversable, DeriveDataTypeable, TupleSections #-}
+  DeriveTraversable, DeriveDataTypeable, TupleSections, TypeOperators #-}
 
 {-
 Voice combinators (create basic voices, combine, transform)

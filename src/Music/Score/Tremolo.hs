@@ -78,9 +78,9 @@ deriving instance Enum a => Enum (TremoloT a)
 
 deriving instance Bounded a => Bounded (TremoloT a)
 
-deriving instance (Num a, Ord a, Real a) => Real (TremoloT a)
+deriving instance (Real a) => Real (TremoloT a)
 
-deriving instance (Real a, Enum a, Integral a) => Integral (TremoloT a)
+deriving instance (Integral a) => Integral (TremoloT a)
 
 deriving instance IsPitch a => IsPitch (TremoloT a)
 

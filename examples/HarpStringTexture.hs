@@ -4,6 +4,7 @@
 {-# LANGUAGE MonadComprehensions #-}
 {-# LANGUAGE NamedFieldPuns #-}
 {-# LANGUAGE TypeApplications #-}
+{-# LANGUAGE TypeOperators #-}
 
 import Music.Prelude
 import qualified Music.Score.Articulation as S

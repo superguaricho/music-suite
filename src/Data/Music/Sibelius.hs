@@ -38,7 +38,8 @@ where
 
 import Control.Monad.Plus
 import Data.Aeson
-import qualified Data.HashMap.Strict as HashMap
+import qualified Data.Aeson.Key as Key
+import qualified Data.Aeson.KeyMap as KeyMap
 
 data SibeliusScore = SibeliusScore
   { scoreTitle :: String,
@@ -120,17 +121,17 @@ isTimeSignature (SibeliusBarObjectTimeSignature _) = True
 isTimeSignature _ = False
 
 instance FromJSON SibeliusBarObject where
-  parseJSON x@(Object v) = case HashMap.lookup "type" v of
+  parseJSON x@(Object v) = case KeyMap.lookup (Key.fromString "type") v of
     -- TODO
-    Just "text" -> SibeliusBarObjectText <$> parseJSON x
-    Just "clef" -> SibeliusBarObjectClef <$> parseJSON x
-    Just "slur" -> SibeliusBarObjectSlur <$> parseJSON x
-    Just "cresc" -> SibeliusBarObjectCrescendoLine <$> parseJSON x
-    Just "dim" -> SibeliusBarObjectDiminuendoLine <$> parseJSON x
-    Just "time" -> SibeliusBarObjectTimeSignature <$> parseJSON x
-    Just "key" -> SibeliusBarObjectKeySignature <$> parseJSON x
-    Just "tuplet" -> SibeliusBarObjectTuplet <$> parseJSON x
-    Just "chord" -> SibeliusBarObjectChord <$> parseJSON x
+    Just (String "text") -> SibeliusBarObjectText <$> parseJSON x
+    Just (String "clef") -> SibeliusBarObjectClef <$> parseJSON x
+    Just (String "slur") -> SibeliusBarObjectSlur <$> parseJSON x
+    Just (String "cresc") -> SibeliusBarObjectCrescendoLine <$> parseJSON x
+    Just (String "dim") -> SibeliusBarObjectDiminuendoLine <$> parseJSON x
+    Just (String "time") -> SibeliusBarObjectTimeSignature <$> parseJSON x
+    Just (String "key") -> SibeliusBarObjectKeySignature <$> parseJSON x
+    Just (String "tuplet") -> SibeliusBarObjectTuplet <$> parseJSON x
+    Just (String "chord") -> SibeliusBarObjectChord <$> parseJSON x
     Just typ -> SibeliusBarObjectUnknown <$> (return $ show typ)
     _ -> mempty -- failure: no type field
   parseJSON _ = fail "expected object"

@@ -167,10 +167,10 @@ instance Bounded a => Bounded (TieT a) where
 
   maxBound = pure maxBound
 
-instance (Num a, Ord a, Real a) => Real (TieT a) where
+instance (Real a) => Real (TieT a) where
   toRational = toRational . extract
 
-instance (Real a, Enum a, Integral a) => Integral (TieT a) where
+instance (Integral a) => Integral (TieT a) where
   quot = liftA2 quot
 
   quotRem = fmap (fmap unzipR) (liftA2 quotRem)

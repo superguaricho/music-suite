@@ -1,5 +1,5 @@
 
-{-# LANGUAGE OverloadedStrings, TypeFamilies, FlexibleContexts #-}
+{-# LANGUAGE OverloadedStrings, TypeFamilies, TypeOperators, FlexibleContexts #-}
 
 -- |
 -- Arvo Pärt: Cantus in Memory of Benjamin Britten (1977)
